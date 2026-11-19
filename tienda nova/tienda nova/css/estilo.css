@@ -1,0 +1,797 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f8f7f4;
+  color: #222;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   2. BARRA DE ANUNCIO
+   ===================================================== */
+.announcement {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   3. HEADER Y NAVEGACIÓN
+   ===================================================== */
+.site-header {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f7f4;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: #b77d61;
+}
+
+.nav {
+  display: flex;
+  gap: 38px;
+}
+
+.nav a {
+  font-size: 13px;
+  color: #555;
+  padding: 10px 0;
+  position: relative;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #222;
+}
+
+/* Subrayado del link activo */
+.nav a.active:after {
+  content: "";
+  height: 2px;
+  background: #b77d61;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   4. HERO (PORTADA)
+   ===================================================== */
+.hero {
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  padding: 35px 7% 65px;
+  align-items: center;
+  gap: 4%;
+}
+
+.hero-copy {
+  padding: 20px 0;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.4px;
+  font-weight: 700;
+  color: #a36f55;
+  margin: 0 0 18px;
+}
+
+.hero h1,
+.page-hero h1 {
+  font: 700 clamp(55px, 7vw, 92px)/.98 "Playfair Display", serif;
+  margin: 0 0 24px;
+  letter-spacing: -2px;
+}
+
+.hero h1 em {
+  color: #b77d61;
+  font-weight: 600;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 390px;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  height: 475px;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiqueta flotante sobre la imagen */
+.image-note {
+  position: absolute;
+  right: -18px;
+  bottom: 25px;
+  background: #b77d61;
+  color: white;
+  padding: 18px 22px;
+  font: 600 15px/1.4 "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   5. BOTONES
+   ===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  padding: 16px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-dark {
+  background: #222;
+  color: white;
+}
+
+.btn-light {
+  background: #f8f7f4;
+  color: #222;
+}
+
+
+/* =====================================================
+   6. SECCIONES GENERALES Y TÍTULOS
+   ===================================================== */
+.section {
+  padding: 75px 7%;
+}
+
+/* Sección de introducción: 2 columnas */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  align-items: center;
+  background: #eeece7;
+}
+
+/* Estilo común de títulos h2 */
+.section h2,
+.contact-copy h2,
+.form-section h2 {
+  font: 600 clamp(32px, 4vw, 48px)/1.12 "Playfair Display", serif;
+  margin: 0;
+}
+
+.intro-text {
+  color: #666;
+  line-height: 1.9;
+  font-size: 14px;
+  max-width: 510px;
+}
+
+/* Encabezado de sección: título a la izquierda, link a la derecha */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+}
+
+.text-link {
+  font-size: 12px;
+  border-bottom: 1px solid #b77d61;
+  padding-bottom: 7px;
+}
+
+
+/* =====================================================
+   7. PRODUCTOS (TARJETAS Y GRILLA)
+   ===================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  background: #e9e5df;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+}
+
+.product-info h3 {
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+
+.product-info p {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+.product-info strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   8. BANNER
+   ===================================================== */
+.banner {
+  height: 440px;
+  position: relative;
+  color: white;
+}
+
+/* Degradado oscuro sobre la imagen para que se lea el texto */
+.banner:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .62), rgba(0, 0, 0, .08));
+}
+
+.banner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner-content .eyebrow {
+  color: #e5b79e;
+}
+
+.banner h2 {
+  font: 600 48px/1.1 "Playfair Display", serif;
+  margin: 0 0 28px;
+}
+
+
+/* =====================================================
+   9. FOOTER
+   ===================================================== */
+.footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 48px 20px 25px;
+}
+
+.logo-light {
+  color: #fff;
+}
+
+.footer > p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.footer small {
+  font-size: 10px;
+  color: #888;
+}
+
+
+/* =====================================================
+   10. PÁGINAS INTERNAS: HERO DE PÁGINA
+   ===================================================== */
+.page-hero {
+  text-align: center;
+  padding: 90px 20px 75px;
+  background: #eeece7;
+}
+
+.page-hero h1 {
+  font-size: 68px;
+  margin-bottom: 14px;
+}
+
+.page-hero > p:last-child {
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   11. CATÁLOGO (FILTROS Y GRILLA)
+   ===================================================== */
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.filter-row > p {
+  font: 600 22px "Playfair Display", serif;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #d8d3cc;
+  padding: 9px 14px;
+  font: 12px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+/* Variante de .product-grid con 4 columnas */
+.catalog-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 18px;
+}
+
+.catalog-grid .product-card img {
+  height: 290px;
+}
+
+.catalog-note {
+  font-size: 11px;
+  color: #888;
+  margin-top: 30px;
+}
+
+
+/* =====================================================
+   12. SERVICIOS Y VALORES
+   ===================================================== */
+.service-layout {
+  display: grid;
+  grid-template-columns: 43% 1fr;
+  gap: 8%;
+  align-items: center;
+}
+
+.service-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 18px;
+  padding: 24px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-item > span {
+  font-size: 12px;
+  color: #b77d61;
+  font-weight: 700;
+}
+
+.service-item h2 {
+  font: 600 22px "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.service-item p,
+.values-grid p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+  margin: 0;
+}
+
+.values-section {
+  background: #eeece7;
+}
+
+.values-section > h2 {
+  margin-bottom: 35px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.values-grid strong {
+  display: block;
+  font: 600 20px "Playfair Display", serif;
+  margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   13. LLAMADO A LA ACCIÓN PEQUEÑO (CTA)
+   ===================================================== */
+.small-cta {
+  padding: 55px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small-cta h2 {
+  font: 600 34px "Playfair Display", serif;
+  margin: 0;
+}
+
+
+/* =====================================================
+   14. CONTACTO Y MAPA
+   ===================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  gap: 7%;
+  align-items: center;
+}
+
+.contact-copy > p:not(.eyebrow) {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+  margin: 20px 0 30px;
+}
+
+.contact-detail {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-detail span {
+  font-size: 10px;
+  color: #a36f55;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact-detail strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.map-wrap {
+  height: 430px;
+  background: #e5e1da;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* =====================================================
+   15. FORMULARIO
+   ===================================================== */
+.form-section {
+  background: #eeece7;
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  gap: 7%;
+}
+
+.form-section > div:first-child > p:last-child {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+  max-width: 300px;
+}
+
+/* Google Form embebido */
+.google-form-box iframe {
+  width: 100%;
+  height: 560px;
+  border: 0;
+  background: white;
+}
+
+.form-help {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.service-layout + .values-section {
+  margin-top: 0;
+}
+
+
+/* =====================================================
+   16. RESPONSIVE: TABLET (hasta 850px)
+   ===================================================== */
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-image {
+    height: 390px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-grid .product-card img {
+    height: 330px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
+  .site-header {
+    padding: 0 5%;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .service-layout {
+    gap: 5%;
+  }
+
+  .service-image img {
+    height: 500px;
+  }
+}
+
+
+/* =====================================================
+   17. RESPONSIVE: MÓVIL (hasta 620px)
+   ===================================================== */
+@media (max-width: 620px) {
+  /* Header y menú desplegable */
+  .site-header {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #f8f7f4;
+    padding: 18px 6%;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #e7e3dd;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 8px 0;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 35px 6% 55px;
+    gap: 25px;
+  }
+
+  .hero-image {
+    height: 360px;
+    margin-right: 12px;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  /* Grillas de 2 columnas a 1 columna */
+  .intro-grid,
+  .service-layout,
+  .contact-grid,
+  .form-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .intro-grid {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .section-heading {
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  /* Productos */
+  .product-grid,
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .product-card img,
+  .catalog-grid .product-card img {
+    height: 230px;
+  }
+
+  .product-info {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  /* Banner */
+  .banner {
+    height: 390px;
+  }
+
+  .banner-content {
+    left: 7%;
+    right: 5%;
+  }
+
+  .banner h2 {
+    font-size: 39px;
+  }
+
+  /* Hero de página y filtros */
+  .page-hero {
+    padding: 65px 15px 55px;
+  }
+
+  .page-hero h1 {
+    font-size: 55px;
+  }
+
+  .filter-row {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  /* Servicios, valores y CTA */
+  .service-image img {
+    height: 400px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .small-cta {
+    align-items: start;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Mapa, formulario y footer */
+  .map-wrap {
+    height: 330px;
+  }
+
+  .google-form-box iframe {
+    height: 650px;
+  }
+
+  .footer-links {
+    gap: 18px;
+  }
+}
